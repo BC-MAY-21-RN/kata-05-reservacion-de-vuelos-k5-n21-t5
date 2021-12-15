@@ -28,15 +28,40 @@ export const Subtitles = styled.Text`
 `
 export const Caption = styled.Text`
     color: black;
-    font-size: 10;
+    font-size: 15;
     margin-top: 5;
 `
-
+export const Text0 = styled.Text`
+    color: black;
+    font-size: 15;
+    margin-top: 5;
+    margin-left:190;
+`
+export const Footer = styled.Text`
+    color: black;
+    font-size: 15;
+    margin-top: 5;
+    margin-left:190;
+`
 
 export const SubmitButton = styled.Button`
     color: black;
     align-self: center;
     border: 2px solid palevioletred;
     border-radius: 3px;
-    padding: 1px;
+    margin-left: 2px;
+    margin-right: 8px;
+    padding: 5px;
+`
+
+export const SubmitButton2 = styled.Button`
+    align-self: center;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+    margin-left: 2px;
+    padding: 5px;
+    margin-right: 8px;
+    backgroundColor: '#FFFFFF',
+
+
 `
