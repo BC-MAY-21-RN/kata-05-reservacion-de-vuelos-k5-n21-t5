@@ -1,0 +1,1 @@
+export { Tittle } from "./common_style";
