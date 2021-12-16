@@ -32,7 +32,6 @@ export const Caption = styled.Text`
     margin-top: 5;
 `
 
-
 export const SubmitButton = styled.Button`
     color: black;
     align-self: center;
