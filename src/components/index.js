@@ -1,1 +1,2 @@
-export {FormInput} from './Forminput/FormInput.js'
+export {FormInput} from './Forminput/FormInput'
+export {FormButton} from './FormButton/FormButton'

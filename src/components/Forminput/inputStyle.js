@@ -1,25 +1,26 @@
 import { StyleSheet } from "react-native";
+import { windowHeight, windowWith } from '../../helpers/size';
 
 export const StylesForm = StyleSheet.create({
-  Container:{
+  Container: {
     flexDirection: 'row'
   },
-  
-  inputContainer:{
-      width: '80%',
-      height: 40,
-      marginBottom: 2,
-      borderColor: '#000',
-      backgroundColor: '#a5bbcf',
-      borderRadius: 8,
-      marginTop: 10,
-      marginBottom: 10,
-    }, 
-    
-    textInput:{
-          color: '#000000',
-          width: 200,
-          fontSize: 14,
-      },
+
+  inputContainer: {
+    width: '100%',
+    height: windowHeight / 18,
+    borderColor: '#000',
+    backgroundColor: '#DBDEDF',
+    borderRadius: 10,
+    marginTop: 10,
+    marginBottom: 10,
+  },
+
+  textInput: {
+    height: windowHeight / 15,
+    width: '100%',
+    fontSize: 20,
+    color: '#000',
+  },
 })
 
