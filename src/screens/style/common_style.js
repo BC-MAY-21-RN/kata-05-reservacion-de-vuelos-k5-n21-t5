@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     Card_Container: {
         alignItems: 'center',
         justifyContent: 'center',
-        width: '80%',
+        width: '85%',
         borderRadius: 20,
         backgroundColor: '#FFF',
         borderWidth: 0.5,
@@ -49,6 +49,15 @@ const styles = StyleSheet.create({
         color: '#046BF1',
         fontSize: 16,
     },
+    paswordText:{
+        color: 'gray',
+        fontSize: 10,
+    },
+    or:{
+        color: 'black',
+        marginTop: 8,
+        marginBottom: 5,
+    }
 
 })
 

@@ -5,7 +5,9 @@ import { FormInput, FormButton } from '../components/index'
 import Styles from '../screens/style/common_style'
 
 
-export const login = () => {
+
+export const login = (props) => {
+  const {navigation} = props
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   return (
@@ -44,10 +46,12 @@ export const login = () => {
           onPress={() => login(email, password)}
         />
 
+       
+
         <View style={Styles.login}>
           <Text style={Styles.textLogin}>Don't have an account? </Text>
 
-          <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+          <TouchableOpacity onPress={() => navigation.navigate('register')}>
             <Text style={Styles.goToSignIn}> Create here </Text>
           </TouchableOpacity>
         </View>

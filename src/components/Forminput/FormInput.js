@@ -11,14 +11,14 @@ export const FormInput = ({
   autoFocus,
   onChangeText,
   autoCapitalize,
-  ...result
+  ...source
 }) => {
   return (
     <View style={StylesForm.Container}>
       <View style={StylesForm.inputContainer}>
         <TextInput //mail 
           style={StylesForm.textInput}
-          {...result}
+          {...source}
           value={labelVal}
           placeholder={placeholderAdj}
           secureTextEntry={secureTextEntry}

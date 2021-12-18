@@ -1,36 +1,41 @@
-// import React from 'react'
-// import CheckBox from '@react-native-community/checkbox'
+import React, {useState} from 'react'
+import CheckBox from '@react-native-community/checkbox'
+import { View, Text } from 'react-native'
+import CheckBoxStyle from './CheckBoxStyle'
 
-// export const CheckBox = () => {
-//     const [checkBox, setCheckBox] = useState(true)
-//     const [checkBox2, setCheckBox2] = useState(true)
-
-//     const revisar = (val) => (checkBox == true) ? setCheckBox(false) : setCheckBox(true)
-//     const revisar2 = (val) => (checkBox2 == true) ? setCheckBox2(false) : setCheckBox2(true) 
-//     return (
-
-//         <View>
+export const CheckB = () => {
+    const [agreecheckBox, setAgreecheckBox] = useState(true)
+    const [suscribecheckBox, setSuscribecheckBox] = useState(true)
+   
+    return (
+      <View>
+          <View  style={CheckBoxStyle.checkContainer}>
+            <CheckBox
+              value={agreecheckBox}
+              tintColors={{true: '#5B5CDD', false: 'gray'}}
+              onValueChange={(checkBox) => setAgreecheckBox(checkBox)}
+            />
             
-//           <CheckBox
-//             title="I agree to the Terms and Privacy Policy"
-//             disabled={false}
-//             value={checkBox}
-//             checkedColor='red'
-//             textStyle='blue'
-//             uncheckedColor='#4543'
-//             onValueChange={(checkBox) => {revisar(checkBox)}}
-//           ></CheckBox> 
+            <Text style={CheckBoxStyle.text}>
+              I agree to the  
+              <Text style={CheckBoxStyle.textUnderLine}>Terms</Text> and 
+              <Text style={CheckBoxStyle.textUnderLine}>Privacy Policy.</Text> *
+            </Text>
+          </View>
           
-
-//           <CheckBox
-//             title="Suscribe for select products updates"
-//             disabled={false}
-//             value={checkBox2}
-//             onValueChange={(checkBox2) => {revisar2(checkBox2)}}
-//             ></CheckBox>
-//         </View>
-//     )
-// }
+          <View style={CheckBoxStyle.checkContainer}>
+            <CheckBox
+              value={suscribecheckBox}
+              tintColors={{true: '#5B5CDD', false: 'gray'}}
+              onValueChange={(checkBox) =>  setSuscribecheckBox(checkBox)}
+            />
+            <Text style={CheckBoxStyle.text}>
+                Suscribe for select products update
+            </Text>
+          </View>
+          </View>
+    )
+}
 
 
 
