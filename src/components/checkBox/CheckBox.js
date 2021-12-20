@@ -17,9 +17,7 @@ export const CheckB = () => {
             />
             
             <Text style={CheckBoxStyle.text}>
-              I agree to the  
-              <Text style={CheckBoxStyle.textUnderLine}>Terms</Text> and 
-              <Text style={CheckBoxStyle.textUnderLine}>Privacy Policy.</Text> *
+              I agree to the  <Text style={CheckBoxStyle.textUnderLine}>Terms</Text> and <Text style={CheckBoxStyle.textUnderLine}>Privacy Policy.</Text> *
             </Text>
           </View>
           
