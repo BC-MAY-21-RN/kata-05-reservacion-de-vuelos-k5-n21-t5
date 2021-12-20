@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Text, View, TouchableOpacity, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context"
-import { FormInput, FormButton, CheckB, GoogleButton} from '../components/index'
+import { FormInput, FormButton, CheckB, GoogleButton, FormPassword, FormEmail} from '../components/index'
 import Styles from '../screens/style/common_style'
 
 export const register = (props) => {
     const {navigation} = props
     const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    
+    
     return (
 
         <SafeAreaView style={Styles.container}>
@@ -25,28 +25,13 @@ export const register = (props) => {
               placeholderAdj={'John Smith'}
               autoCapitalize={'words'}
             />
-
             <Text style={Styles.subtitle}>Email</Text>
-  
-            <FormInput
-              style={Styles.textInput}
-              labelVal={email}
-              secureTextEntry={false}
-              onChangeText={(useremail) => setEmail(useremail)}
-              placeholderAdj={'Example@Example.com'}
-              autoCapitalize={'none'}
-            />
+
+            <FormEmail />
   
             <Text style={Styles.subtitle}>Password</Text>
   
-            <FormInput
-              style={Styles.textInput}
-              labelVal={password}
-              secureTextEntry={true}
-              onChangeText={(userpass) => setPassword(userpass)}
-              autoFocus={false}
-              autoCapitalize={'none'}
-            />
+          <FormPassword />
             <Text style={Styles.paswordText}>Use 8 or more characters with a mix of letters,numbers and symbols</Text>
           </View>
           <View>

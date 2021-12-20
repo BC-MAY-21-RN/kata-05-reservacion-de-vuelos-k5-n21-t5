@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import { Text, View, TouchableOpacity, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context"
-import { FormInput, FormButton } from '../components/index'
+import { FormPassword, FormButton, FormEmail } from '../components/index'
 import Styles from '../screens/style/common_style'
 
 
 
 export const login = (props) => {
   const {navigation} = props
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
   return (
 
 
@@ -20,25 +18,11 @@ export const login = (props) => {
         <View style={Styles.containerForm}>
           <Text style={Styles.subtitle}>Email</Text>
 
-          <FormInput
-            style={Styles.textInput}
-            labelVal={email}
-            secureTextEntry={false}
-            onChangeText={(useremail) => setEmail(useremail)}
-            placeholderAdj={'Example@Example.com'}
-            autoCapitalize={'none'}
-          />
+          <FormEmail />
 
           <Text style={Styles.subtitle}>Password</Text>
 
-          <FormInput
-            style={Styles.textInput}
-            labelVal={password}
-            secureTextEntry={true}
-            onChangeText={(userpass) => setPassword(userpass)}
-            autoFocus={false}
-            autoCapitalize={'none'}
-          />
+          <FormPassword  />
         </View>
 
         <FormButton
