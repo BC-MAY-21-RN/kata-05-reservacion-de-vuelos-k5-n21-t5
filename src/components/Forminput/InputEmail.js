@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {FormInput} from './FormInput'
 import Styles from '../../screens/style/common_style'
 
-export const FormEmail = () => {
+export const InputEmail = () => {
     const [email, setEmail] = useState('')
     console.log(email)
   return(

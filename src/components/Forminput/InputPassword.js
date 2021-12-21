@@ -2,7 +2,7 @@ import React, { useState }from 'react'
 import {FormInput} from './FormInput'
 import Styles from '../../screens/style/common_style'
 
-export const FormPassword = () => {
+export const InputPassword = () => {
     const [password, setPassword] = useState('')
     
   return (
