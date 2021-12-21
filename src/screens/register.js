@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Text, View, TouchableOpacity, Image } from "react-native";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context"
-import { FormInput, FormButton, CheckB, GoogleButton, FormPassword, FormEmail} from '../components/index'
+import { FormInput, FormButton, CheckB, GoogleButton, InputPassword, InputEmail, Footer} from '../components/index'
 import Styles from '../screens/style/common_style'
 
 export const register = (props) => {
-    const {navigation} = props
     const [name, setName] = useState('')
     
     
@@ -27,12 +26,12 @@ export const register = (props) => {
             />
             <Text style={Styles.subtitle}>Email</Text>
 
-            <FormEmail />
+            <InputEmail />
   
             <Text style={Styles.subtitle}>Password</Text>
   
-          <FormPassword />
-            <Text style={Styles.paswordText}>Use 8 or more characters with a mix of letters,numbers and symbols</Text>
+          <InputPassword />
+            <Text style={Styles.paswordText}>Use 8 or more characters with a mix of letters, numbers and symbols</Text>
           </View>
           <View>
               <CheckB />
@@ -45,18 +44,12 @@ export const register = (props) => {
 
             <Text style={Styles.or}>Or</Text>
           
-          <GoogleButton 
-            buttonTitle={"Sign Up with Google"}
-            />
+          <GoogleButton buttonTitle={"Sign Up with Google"} />
+
+          <Footer text={'Already have an account?'} direction={'login'} page={' Log In'} navigation={props.navigation} key={`Footer-1`}/>
           
 
-          <View style={Styles.login}>
-          <Text style={Styles.textLogin}>Already have an account? </Text>
 
-          <TouchableOpacity onPress={() => navigation.navigate('login')}>
-            <Text style={Styles.goToSignIn}> Log In </Text>
-          </TouchableOpacity>
-        </View>
         </View>
       </SafeAreaView>
     )
