@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { windowHeight } from '../../helpers/size';
+import {StyleSheet} from 'react-native';
+import {windowHeight} from '../../helpers/size';
 
 export const GoogleStyles = StyleSheet.create({
   buttonContainer: {
@@ -11,19 +11,22 @@ export const GoogleStyles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 10,
     backgroundColor: '#5B5CDD',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
+
   buttonText: {
     fontSize: 16,
     fontWeight: 'bold',
     color: '#FFF',
-
   },
-  imageContainer:{
+
+  imageContainer: {
     width: '17%',
   },
-  imageGoogle:{
+
+  imageGoogle: {
     width: 30,
     height: 30,
-  }
+    borderRadius: 20,
+  },
 });

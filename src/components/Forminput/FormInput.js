@@ -1,8 +1,7 @@
-import React from 'react'
-import { TextInput, View } from 'react-native'
-/* import Icon from 'react-native-vector-icons'
- */
-import { StylesForm } from './inputStyle'
+import React from 'react';
+import {TextInput, TouchableOpacity, View} from 'react-native';
+import IonIcon from 'react-native-vector-icons/Ionicons';
+import {StylesForm} from './inputStyle';
 
 export const FormInput = ({
   labelVal,
@@ -11,25 +10,28 @@ export const FormInput = ({
   autoFocus,
   onChangeText,
   autoCapitalize,
+  iconName,
   ...source
 }) => {
+  IonIcon.loadFont();
   return (
     <View style={StylesForm.Container}>
       <View style={StylesForm.inputContainer}>
-        <TextInput //mail 
+        <TextInput //mail
           style={StylesForm.textInput}
           {...source}
           value={labelVal}
           placeholder={placeholderAdj}
           secureTextEntry={secureTextEntry}
           onChangeText={onChangeText}
-          placeholderTextColor='black'
+          placeholderTextColor="black"
           autoCapitalize={autoCapitalize}
         />
+
+        <TouchableOpacity>
+          <IonIcon style={StylesForm.iconInput} name={iconName} size={30} />
+        </TouchableOpacity>
       </View>
     </View>
-  )
-}
-
-
-
+  );
+};

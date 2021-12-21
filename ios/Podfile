@@ -12,11 +12,14 @@ target 'kata05' do
     :hermes_enabled => false
   )
 
+
   target 'kata05Tests' do
     inherit! :complete
     # Pods for testing
   end
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and

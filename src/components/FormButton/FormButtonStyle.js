@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { windowHeight} from '../../helpers/size';
+import {StyleSheet} from 'react-native';
+import {windowHeight} from '../../helpers/size';
 
 export const ButtonStyles = StyleSheet.create({
   buttonContainer: {
@@ -12,6 +12,7 @@ export const ButtonStyles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#5B5CDD',
   },
+
   buttonText: {
     fontSize: 16,
     fontWeight: 'bold',
