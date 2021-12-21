@@ -1,9 +1,9 @@
-import { StyleSheet } from "react-native";
-import { windowHeight, windowWith } from '../../helpers/size';
+import {StyleSheet} from 'react-native';
+import {windowHeight} from '../../helpers/size';
 
 export const StylesForm = StyleSheet.create({
   Container: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
 
   inputContainer: {
@@ -22,5 +22,12 @@ export const StylesForm = StyleSheet.create({
     fontSize: 20,
     color: '#000',
   },
-})
 
+  iconInput: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    textAlign: 'right',
+    marginRight: 10,
+  },
+});
