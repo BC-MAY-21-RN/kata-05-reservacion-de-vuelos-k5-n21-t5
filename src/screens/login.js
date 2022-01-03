@@ -1,27 +1,41 @@
-import React , { useState } from "react";
-import { Text, View, TextInput, Button } from "react-native";
-import CheckBox from '@react-native-community/checkbox';
-import Styles from '../screens/style/common_style'
+import React from 'react';
+import {Text, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {
+  InputPassword,
+  FormButton,
+  InputEmail,
+  Footer,
+} from '../components/index';
+import Styles from '../screens/style/common_style';
 
-export const login = (props) => {
+export const login = props => {
+  return (
+    <SafeAreaView style={Styles.container}>
+      <View style={Styles.Card_Container}>
+        <Text style={Styles.title}>Log In</Text>
 
-    return (
+        <View style={Styles.containerForm}>
+          <Text style={Styles.subtitle}>Email</Text>
 
-    <View style={Styles.container}>
-      
-      <Text style={Styles.title}>Log In</Text>
-      
-      <Text>Email</Text>
-      <TextInput ></TextInput>
-      
-      <Text>Password</Text>
-      <TextInput></TextInput>
-      <Text>Use 8 or mor characters with a mix of of letters,numbers ans symbols.</Text> 
+          <InputEmail />
 
-      
-        
-      <Button title="Sing Up"/>
+          <Text style={Styles.subtitle}>Password</Text>
 
-    </View> 
-  )
-}
+          <InputPassword />
+        </View>
+
+        <FormButton
+          buttonTitle="Log In"
+          onPress={() => login(email, password)}
+        />
+
+        <Footer
+          page={'Create here'}
+          direction={'register'}
+          text={"Don't have ana account?"}
+        />
+      </View>
+    </SafeAreaView>
+  );
+};
