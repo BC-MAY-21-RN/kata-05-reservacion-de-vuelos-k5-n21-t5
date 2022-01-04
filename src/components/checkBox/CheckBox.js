@@ -1,18 +1,20 @@
 import React, {useState} from 'react';
-import CheckBox from '@react-native-community/checkbox';
 import {View, Text} from 'react-native';
 import CheckBoxStyle from './CheckBoxStyle';
+import {Check_Box} from '../index';
 
 export const CheckB = () => {
-  const [agreecheckBox, setAgreecheckBox] = useState(true);
-  const [suscribecheckBox, setSuscribecheckBox] = useState(true);
+  const [agreecheckBox, setAgreecheckBox] = useState(false);
+  const [suscribecheckBox, setSuscribecheckBox] = useState(false);
+
   return (
     <View>
       <View style={CheckBoxStyle.checkContainer}>
-        <CheckBox
+        <Check_Box
           value={agreecheckBox}
-          tintColors={{true: '#5B5CDD', false: 'gray'}}
-          onValueChange={checkBox => setAgreecheckBox(checkBox)}
+          onValueChange={state => {
+            setAgreecheckBox(state);
+          }}
         />
 
         <Text style={CheckBoxStyle.text}>
@@ -22,10 +24,11 @@ export const CheckB = () => {
       </View>
 
       <View style={CheckBoxStyle.checkContainer}>
-        <CheckBox
+        <Check_Box
           value={suscribecheckBox}
-          tintColors={{true: '#5B5CDD', false: 'gray'}}
-          onValueChange={checkBox => setSuscribecheckBox(checkBox)}
+          onValueChange={newValue => {
+            setSuscribecheckBox(newValue);
+          }}
         />
 
         <Text style={CheckBoxStyle.text}>

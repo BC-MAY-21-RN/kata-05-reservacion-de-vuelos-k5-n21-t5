@@ -40,23 +40,13 @@ export const register = props => {
           <CheckB />
         </View>
 
-        <FormButton
-          buttonTitle="Sign Up"
-          onPress={() => register(name, email, password)}
-        />
+        <FormButton buttonTitle="Sign Up" onPress={() => register(name, email, password)} />
 
         <Text style={Styles.or}>Or</Text>
 
         <GoogleButton buttonTitle={'Sign Up with Google'} />
 
-        <Footer
-          name={'LogIn'}
-          text={'Already have an account?'}
-          direction={'login'}
-          page={' Log In'}
-          navigation={props.navigation}
-          key={'Footer-1'}
-        />
+        <Footer name={'LogIn'} text={'Already have an account?'} direction={'login'} page={' Log In'} navigation={props.navigation} key={'Footer-1'}/>
       </View>
     </SafeAreaView>
   );
