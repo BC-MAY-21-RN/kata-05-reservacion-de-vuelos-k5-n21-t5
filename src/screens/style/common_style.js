@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {windowHeight, windowWidth} from '../../helpers/size.js';
 
 const styles = StyleSheet.create({
   container: {
@@ -57,6 +58,22 @@ const styles = StyleSheet.create({
     color: 'black',
     marginTop: 8,
     marginBottom: 5,
+  },
+  mfTitle: {
+    fontSize: 28,
+    color: '#5c6df8',
+    fontWeight: '800',
+    margin: 10,
+    letterSpacing: 0.9,
+  },
+  container_circle: {
+    position: 'absolute',
+    alignSelf: 'center',
+    bottom: windowHeight / 9,
+  },
+  add_circle: {
+    color: '#5c6df8',
+    fontSize: 90,
   },
 });
 
