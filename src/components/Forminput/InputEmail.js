@@ -4,7 +4,6 @@ import Styles from '../../screens/style/common_style';
 
 export const InputEmail = () => {
   const [email, setEmail] = useState('');
-  console.log(email);
   return (
     <FormInput
       style={Styles.textInput}

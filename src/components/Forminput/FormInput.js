@@ -13,7 +13,6 @@ export const FormInput = ({
   iconName,
   ...source
 }) => {
-  IonIcon.loadFont();
   return (
     <View style={StylesForm.Container}>
       <View style={StylesForm.inputContainer}>
