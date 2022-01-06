@@ -19,7 +19,7 @@ export const StylesForm = StyleSheet.create({
   textInput: {
     height: windowHeight / 15,
     width: '100%',
-    fontSize: 20,
+    fontSize: 15,
     color: '#000',
   },
 
