@@ -75,6 +75,18 @@ const styles = StyleSheet.create({
     color: '#5c6df8',
     fontSize: 90,
   },
+  flightsContainer: {
+    marginBottom: 50,
+  },
+  log_out_container:{
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  log_out:{
+    fontSize: 40,
+    color: '#5c6df8',
+    margin: 10,
+  },
 });
 
 export default styles;

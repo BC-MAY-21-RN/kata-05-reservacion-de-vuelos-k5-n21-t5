@@ -1227,6 +1227,11 @@
   "resolved" "https://registry.npmjs.org/@react-native-firebase/auth/-/auth-14.2.1.tgz"
   "version" "14.2.1"
 
+"@react-native-google-signin/google-signin@^7.0.4":
+  "integrity" "sha512-N5uVDlTp/mgpa5gFr6VIr8pldt68jlmHOlqcTSnSwBuZXusXMiK53DCIOWuYk4OJ1rlb8Esa9J4FJwUB0psU9Q=="
+  "resolved" "https://registry.npmjs.org/@react-native-google-signin/google-signin/-/google-signin-7.0.4.tgz"
+  "version" "7.0.4"
+
 "@react-native-windows/cli@0.66.1":
   "integrity" "sha512-lEFpn+EVphz9GkeSdQsNWBgaeXlLrml8rD2GLep/gd53wwBSXs4mqU3UXZ5XyJi7GOgLe2pD7VNYt0YIpNgK2w=="
   "resolved" "https://registry.npmjs.org/@react-native-windows/cli/-/cli-0.66.1.tgz"

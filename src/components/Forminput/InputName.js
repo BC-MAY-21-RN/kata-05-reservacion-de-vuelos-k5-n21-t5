@@ -1,18 +1,17 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import {FormInput} from './FormInput';
-import Styles from '../../screens/style/common_style';
+import {StylesForm} from './inputStyle';
 
-export const InputName = () => {
-  const [name, setName] = useState('');
+export const InputName = (name, ...rest) => {
 
   return (
     <View>
       <FormInput
-        style={Styles.textInput}
+        style={StylesForm.textInput}
         labelVal={name}
+        {...rest}        
         secureTextEntry={false}
-        onChangeText={username => setName(username)}
         placeholderAdj={'John Smith'}
         autoCapitalize={'words'}
       />
