@@ -48,7 +48,6 @@ export const login = (props) => {
   });
   }
 
-
   return (
     <SafeAreaView style={Styles.container}>
       <View style={Styles.Card_Container}>
@@ -65,7 +64,6 @@ export const login = (props) => {
             onChangeText={(password) => setPassword(password)}
           />
         </View>
-
         
         <FormButton
           buttonTitle="Log In"
