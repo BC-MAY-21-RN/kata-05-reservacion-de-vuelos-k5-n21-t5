@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import StyleList from './FlightListStyle';
+import FlightStyle from './FlightStyle'
 import IonIcon from 'react-native-vector-icons/Ionicons';
 
 export function My_flightlist(props) {
@@ -15,24 +15,24 @@ export function My_flightlist(props) {
   } = flights;
 
   return (
-    <View style={StyleList.container}>
-      <View style={StyleList.flyregion}>
+    <View style={FlightStyle.container}>
+      <View style={FlightStyle.flyregion}>
         <View>
-          <Text style={StyleList.cityList}>{capitalOrigin}</Text>
-          <Text style={StyleList.countryList}>{countryOrigin}</Text>
+          <Text style={FlightStyle.cityList}>{capitalOrigin}</Text>
+          <Text style={FlightStyle.countryList}>{countryOrigin}</Text>
         </View>
 
         <IonIcon name="airplane" size={30} color={'#5c6df8'} />
 
         <View>
-          <Text style={StyleList.cityList}>{capitalDestiny}</Text>
-          <Text style={StyleList.countryList}>{countryDestiny}</Text>
+          <Text style={FlightStyle.cityList}>{capitalDestiny}</Text>
+          <Text style={FlightStyle.countryList}>{countryDestiny}</Text>
         </View>
       </View>
 
-      <View style={StyleList.flydetails}>
-        <Text style={StyleList.date}>{date}</Text>
-        <Text style={StyleList.passenger}>{passengers} passengers</Text>
+      <View style={FlightStyle.flydetails}>
+        <Text style={FlightStyle.date}>{date}</Text>
+        <Text style={FlightStyle.passenger}>{passengers} passengers</Text>
       </View>
     </View>
   );

@@ -1,15 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {FormInput} from './FormInput';
-import Styles from '../../screens/style/common_style';
+import {StylesForm} from './inputStyle';
 
-export const InputEmail = () => {
-  const [email, setEmail] = useState('');
+export const InputEmail = ({email, ...rest}) => {
+  
   return (
     <FormInput
-      style={Styles.textInput}
+    style={StylesForm.textInput}
       labelVal={email}
       secureTextEntry={false}
-      onChangeText={useremail => setEmail(useremail)}
+      keyboardType={'default'}
+      {...rest}
       placeholderAdj={'Example@Example.com'}
       autoCapitalize={'none'}
     />
