@@ -9,8 +9,7 @@ import {
   InputEmail,
   Footer,
 } from '../components/index';
-import Styles from '../screens/style/common_style';
-
+import Common_Styles from '../styles/CommonStyles';
 export const login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -49,16 +48,16 @@ export const login = (props) => {
   }
 
   return (
-    <SafeAreaView style={Styles.container}>
-      <View style={Styles.Card_Container}>
-        <Text style={Styles.title}>Log In</Text>
+    <SafeAreaView style={Common_Styles.center_container}>
+      <View style={Common_Styles.Card_Container}>
+        <Text style={Common_Styles.title}>Log In</Text>
 
-        <View style={Styles.containerForm}>
-          <Text style={Styles.subtitle}>Email</Text>
+        <View style={Common_Styles.container_Form}>
+          <Text style={Common_Styles.subtitle}>Email</Text>
 
           <InputEmail onChangeText={(email) => setEmail(email)} />
 
-          <Text style={Styles.subtitle}>Password</Text>
+          <Text style={Common_Styles.subtitle}>Password</Text>
 
           <InputPassword
             onChangeText={(password) => setPassword(password)}

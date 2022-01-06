@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const StyleList = StyleSheet.create({
+const FlightStyle = StyleSheet.create({
   container: {
     marginHorizontal: 20,
     marginTop: 5,
@@ -44,6 +44,25 @@ const StyleList = StyleSheet.create({
     fontWeight: '600',
     fontSize: 15,
   },
+  my_flights_Title: {
+    fontSize: 28,
+    color: '#5c6df8',
+    fontWeight: '800',
+    margin: 10,
+    letterSpacing: 0.9,
+  },
+  logOut_container_row_spaceBetween:{
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  log_out:{
+    fontSize: 40,
+    color: '#5c6df8',
+    margin: 10,
+  },
+  flights_Container: {
+    marginBottom: 50,
+  },
 });
 
-export default StyleList;
+export default FlightStyle;

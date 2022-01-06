@@ -10,7 +10,8 @@ import {
   Footer,
   InputName,
 } from '../components/index';
-import Styles from '../screens/style/common_style';
+import Common_Styles from '../styles/CommonStyles';
+import style_index from './style/style_index';
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';
 
@@ -56,24 +57,24 @@ export const register = (props) => {
   }
 
   return (
-    <SafeAreaView style={Styles.container}>
-      <View style={Styles.Card_Container}>
-        <Text style={Styles.title}>Sign Up</Text>
+    <SafeAreaView style={Common_Styles.center_container}>
+      <View style={Common_Styles.Card_Container}>
+        <Text style={Common_Styles.title}>Sign Up</Text>
 
-        <View style={Styles.containerForm}>
-          <Text style={Styles.subtitle}>First Name</Text>
+        <View style={Common_Styles.container_Form}>
+          <Text style={Common_Styles.subtitle}>First Name</Text>
 
           <InputName onChangeText={(name) => setName(name)}/>
 
-          <Text style={Styles.subtitle}>Email</Text>
+          <Text style={Common_Styles.subtitle}>Email</Text>
 
           <InputEmail onChangeText={(email) => setEmail(email)}/>
 
-          <Text style={Styles.subtitle}>Password</Text>
+          <Text style={Common_Styles.subtitle}>Password</Text>
 
           <InputPassword onChangeText={(password) => setPassword(password)} iconName={'eye-outline'}/>
 
-          <Text style={Styles.paswordText}>
+          <Text style={Common_Styles.paswordText}>
             Use 8 or more characters with a mix of letters, numbers and symbols
           </Text>
         </View>
@@ -87,7 +88,7 @@ export const register = (props) => {
           onPress={registerUser}
         />
 
-        <Text style={Styles.or}>Or</Text>
+        <Text style={style_index.or}>Or</Text>
         
         <GoogleSigninButton onPress={() => onGoogleButtonPress().then(() => navigation.replace('my_flights'))}/>
         {/* <FormButton

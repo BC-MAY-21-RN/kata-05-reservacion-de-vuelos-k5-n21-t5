@@ -2,11 +2,12 @@ import React from 'react'
 import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Style from './BookingStyles';
+import Common_Styles from '../../styles/CommonStyles';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 
 export const To = () => {
   return (
-    <SafeAreaView style={Style.container}>
+    <SafeAreaView style={Common_Styles.center_container}>
       <View style={Style.back}>
       <IonIcon name="chevron-back" size={38} color={'#5c6df8'} />
       </View>

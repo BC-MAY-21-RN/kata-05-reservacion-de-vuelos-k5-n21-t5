@@ -1,13 +1,14 @@
 import React from 'react';
 import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import Styles from './style/common_style';
+import {useNavigation} from '@react-navigation/native';
+import style_index from './style/style_index';
 import {My_flightlist} from '../components/index';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import flies from '.././helpers/flies.json';
-import {useNavigation} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
-
+import Common_Styles from '../styles/CommonStyles';
+import FlightStyle from '../components/flightlist/FlightStyle';
 export const my_flights = () => {
   const navigation = useNavigation()
 
@@ -25,17 +26,17 @@ export const my_flights = () => {
   return (
     <SafeAreaView>
       <View>
-        <View style={Styles.log_out_container}>
-        <Text style={Styles.mfTitle}>My flights</Text>
+        <View style={FlightStyle.logOut_container_row_spaceBetween}>
+        <Text style={FlightStyle.my_flights_Title}>My flights</Text>
         <TouchableOpacity onPress={signOut}>
-        <IonIcon style={Styles.log_out} name="log-out"/>
+        <IonIcon style={FlightStyle.log_out} name="log-out"/>
       </TouchableOpacity>
         </View>
       </View>
-      <ScrollView style={Styles.flightsContainer}>{renderflights}</ScrollView>
+      <ScrollView style={FlightStyle.flights_Container}>{renderflights}</ScrollView>
 
-      <TouchableOpacity style={Styles.container_circle}>
-        <IonIcon name="add-circle" style={Styles.add_circle} />
+      <TouchableOpacity style={style_index.container_circle}>
+        <IonIcon name="add-circle" style={style_index.add_circle} />
       </TouchableOpacity>
     </SafeAreaView>
   );
