@@ -19,10 +19,25 @@ const Styles = StyleSheet.create({
     paddingVertical: 8,
     width: windowWidth * .50,
   },
+  flyregion_selectDate: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderBottomColor: '#444646',
+    borderBottomWidth: 0.5,
+    paddingVertical: 8,
+  },
   cityList: {
     color: 'black',
     fontWeight: '900',
     fontSize: 30,
+  },
+  cityListDestiny: {
+    color: 'black',
+    fontWeight: '900',
+    fontSize: 30,
+    textAlign: 'right'
   },
   countryList: {
     color: 'black',
@@ -30,8 +45,10 @@ const Styles = StyleSheet.create({
     fontSize: 14,
     letterSpacing: 0.8,
   },
-  to_containar:{
-    
+  to_container:{
+  },
+  from_container:{
+    marginTop: windowHeight/6
   },
   to:{
     marginTop: 60,
@@ -47,8 +64,9 @@ const Styles = StyleSheet.create({
     fontSize: 15
   },
   container_next:{
-    alignContent: "center",
-    padding: 10,
+    position: 'absolute',
+    alignSelf: 'center',
+    marginTop: windowHeight/1.2
   },
   text_next:{
     color:'white',
@@ -56,9 +74,16 @@ const Styles = StyleSheet.create({
     fontSize: 18,
     bottom: 0.9,
     textAlign: 'center',
-    borderRadius: 5,
-    height: 30,
-  }
+    borderRadius: 10,
+    height: 40,
+    textAlignVertical: "center",
+    paddingHorizontal: windowWidth / 3
+  },
+  date: {
+    color: 'black',
+    fontWeight: '500',
+    fontSize: 15,
+  },
 })
 
 export default Styles;
