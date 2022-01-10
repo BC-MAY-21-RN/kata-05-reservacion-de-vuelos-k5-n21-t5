@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 const Common_Styles = StyleSheet.create({
   center_container: {
@@ -34,6 +34,11 @@ const Common_Styles = StyleSheet.create({
     marginBottom: 20,
     alignItems: 'flex-start',
   },
-})
+  passwordText:{
+    color:'black',
+    fontSize: 12,
+    textAlign: 'center'
+  }
+});
 
-export default Common_Styles
+export default Common_Styles;

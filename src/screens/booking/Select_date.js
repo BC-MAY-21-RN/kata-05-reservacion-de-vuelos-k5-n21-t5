@@ -1,25 +1,25 @@
-import React, {useState} from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import React, {useState} from 'react';
+import {View, Text, TouchableOpacity} from 'react-native';
 import IonIcon from 'react-native-vector-icons/Ionicons';
-import { useNavigation } from '@react-navigation/native';
-import { SafeAreaView } from 'react-native-safe-area-context'
+import {useNavigation} from '@react-navigation/native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Style from './BookingStyles';
 import {Calendar} from 'react-native-calendars';
 export const Select_date = () => {
-  let fullDate = {}
-  const [dia, setDia] = useState(null)
-  const [month, setMonth] = useState(null)
-  const [year, setYear] = useState(null)
+  const [dia, setDia] = useState(null);
+  const [month, setMonth] = useState(null);
+  const [year, setYear] = useState(null);
 
-    const navigation = useNavigation();
-    console.log(dia)
+  const navigation = useNavigation();
+  console.log(dia);
   return (
     <SafeAreaView style={Style.container}>
-      <TouchableOpacity onPress={() =>{
-        navigation.goBack();
-      }}>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('To');
+        }}>
         <View style={Style.back}>
-            <IonIcon name="chevron-back" size={38} color={'#5c6df8'} />
+          <IonIcon name="chevron-back" size={38} color={'#5c6df8'} />
         </View>
       </TouchableOpacity>
 
@@ -40,26 +40,21 @@ export const Select_date = () => {
       <View style={Style.to_container}>
         <Text style={Style.to}>Select Date</Text>
       </View>
-      <Calendar 
+      <Calendar
         minDate={'2020-01-01'}
-        maxDate={'2023-12-31'} 
-        onDayPress={(date) => {
-          console.log(date.day)
-         return (
-          {setDia: day} = date
-         )
-        }}
-        theme={{ backgroundColor: '#f2f2f2'}} style={{height:150}}
+        maxDate={'2023-12-31'}
+        //onDayPress={}
+        theme={{backgroundColor: '#f2f2f2'}}
+        style={{height: 150}}
       />
-      
-      <TouchableOpacity style={Style.container_next} onPress={() => {
-        navigation.navigate('Passenger')
-      }}>
+
+      <TouchableOpacity
+        style={Style.container_next}
+        onPress={() => {
+          navigation.navigate('Passenger');
+        }}>
         <Text style={Style.text_next}>Next</Text>
       </TouchableOpacity>
-      
     </SafeAreaView>
-  )
-}
-
-
+  );
+};

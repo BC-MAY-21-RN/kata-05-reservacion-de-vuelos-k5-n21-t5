@@ -51,11 +51,11 @@ const FlightStyle = StyleSheet.create({
     margin: 10,
     letterSpacing: 0.9,
   },
-  logOut_container_row_spaceBetween:{
+  logOut_container_row_spaceBetween: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
-  log_out:{
+  log_out: {
     fontSize: 40,
     color: '#5c6df8',
     margin: 10,
