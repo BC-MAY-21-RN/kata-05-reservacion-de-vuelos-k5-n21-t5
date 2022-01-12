@@ -39,8 +39,8 @@ export const Passenger = () => {
       <View style={Style.to_container}>
         <Text style={Style.to}>How many passengers?</Text>
       </View>
-
-      <PassengerPicker />
+        
+        <PassengerPicker />
       <TouchableOpacity
         style={Style.container_next}
         onPress={() => {

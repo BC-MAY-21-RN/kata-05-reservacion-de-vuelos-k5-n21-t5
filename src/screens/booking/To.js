@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Style from './BookingStyles';
@@ -7,6 +7,7 @@ import {useNavigation} from '@react-navigation/native';
 
 export const To = () => {
   const navigation = useNavigation();
+  const [textInputFrom, setTextInputFrom] = useState('');
   let sumary = {
     capitalOrigin: '',
     countryOrigin: '',
@@ -18,6 +19,13 @@ export const To = () => {
       year: 0,
     },
     passengers: 0,
+  };
+  const checkTextInput = () => {
+    if (!textInputFrom.trim()) {
+      alert('Please Enter a City');
+      return;
+    }
+    navigation.navigate('Select_date', sumary);
   };
   return (
     <SafeAreaView style={Style.container}>
@@ -45,15 +53,13 @@ export const To = () => {
           style={Style.textInput_to}
           placeholder="Select location"
           placeholderTextColor="black"
+          onChangeText={(value) => setTextInputFrom(value)}
         />
       </View>
 
       <TouchableOpacity
         style={Style.container_next}
-        onPress={() => {
-          //Asignar el origen sumary.origin
-          navigation.navigate('Select_date', sumary);
-        }}>
+        onPress={checkTextInput}>
         <Text style={Style.text_next}>Next</Text>
       </TouchableOpacity>
     </SafeAreaView>
