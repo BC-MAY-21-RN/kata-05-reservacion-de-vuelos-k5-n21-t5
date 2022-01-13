@@ -34,6 +34,6 @@ const style_index = StyleSheet.create({
     color: '#5c6df8',
     fontSize: 90,
   },
-})
+});
 
-export default style_index
+export default style_index;

@@ -1,34 +1,44 @@
-import React from 'react'
-import { View, Text, TextInput, TouchableOpacity } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import React, {useState} from 'react';
+import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import Style from './BookingStyles';
 import IonIcon from 'react-native-vector-icons/Ionicons';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+import {BookingLayout} from '../../components/Layout/BookingLayout';
 
-export const From = (props) => {
-  console.log(props)
-  const {route: {params: sumary}} = props
+export const From = props => {
   const navigation = useNavigation();
-  return (
-    <SafeAreaView style={Style.container}>
-      <TouchableOpacity onPress={() =>{
-        navigation.navigate('my_flights')
-      }}>
-        <View style={Style.back}>
-        <IonIcon name="chevron-back" size={38} color={'#5c6df8'} />
-        </View>
-      </TouchableOpacity>
+  const [textInputFrom, setTextInputFrom] = useState('');
 
+  const {
+    route: {params: sumary},
+  } = props;
+  const checkTextInput = () => {
+    if (!textInputFrom.trim()) {
+      alert('Please Enter a City');
+      return;
+    }
+    navigation.navigate('To');
+  };
+  return (
+    <BookingLayout
+      page={'my_flights'}
+      showOrigin={false}
+      showDestiny={false}
+      showDate={false}
+      underline={false}>
       <View style={Style.from_container}>
-      <Text style={Style.to}>Where are you now?</Text>
-      <TextInput style={Style.textInput_to} placeholder='Select location' placeholderTextColor='black'/>
+        <Text style={Style.to}>Where are you now?</Text>
+        <TextInput
+          style={Style.textInput_to}
+          placeholder="Select location"
+          placeholderTextColor="black"
+          onChangeText={value => setTextInputFrom(value)}
+        />
       </View>
-      
-      <TouchableOpacity style={Style.container_next} onPress={()=>{
-        navigation.navigate('To')
-      }}>
+
+      <TouchableOpacity style={Style.container_next} onPress={checkTextInput}>
         <Text style={Style.text_next}>Next</Text>
       </TouchableOpacity>
-    </SafeAreaView>
-  )
-}
+    </BookingLayout>
+  );
+};

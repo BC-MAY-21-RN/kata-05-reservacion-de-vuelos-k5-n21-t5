@@ -8,7 +8,7 @@ const CheckBoxStyle = StyleSheet.create({
 
   text: {
     color: 'gray',
-    fontSize: 10,
+    fontSize: 12,
     margin: 8,
     marginLeft: 0,
   },
