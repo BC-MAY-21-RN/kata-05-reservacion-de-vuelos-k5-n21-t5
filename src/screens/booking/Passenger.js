@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 import Style from './BookingStyles';
 import {PassengerPicker} from '../../components/index';
-import {BookingLayout} from '../../components/Layout/BookingLayout';
+import {BookingLayout, NextButton} from '../../components/index';
 
 export const Passenger = () => {
-  const navigation = useNavigation();
   return (
     <BookingLayout
       page={'Select_date'}
@@ -19,13 +17,7 @@ export const Passenger = () => {
       </View>
 
       <PassengerPicker />
-      <TouchableOpacity
-        style={Style.container_next}
-        onPress={() => {
-          navigation.navigate('my_flights');
-        }}>
-        <Text style={Style.text_next}>Next</Text>
-      </TouchableOpacity>
+      <NextButton nextPage={'my_flights'} value={'1'}/>
     </BookingLayout>
   );
 };

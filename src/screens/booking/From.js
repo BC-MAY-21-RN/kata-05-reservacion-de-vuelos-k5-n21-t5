@@ -1,24 +1,26 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import Style from './BookingStyles';
-import IonIcon from 'react-native-vector-icons/Ionicons';
-import {useNavigation} from '@react-navigation/native';
-import {BookingLayout} from '../../components/Layout/BookingLayout';
+import {BookingLayout, NextButton} from '../../components/index';
 
 export const From = props => {
-  const navigation = useNavigation();
-  const [textInputFrom, setTextInputFrom] = useState('');
+  
 
-  const {
-    route: {params: sumary},
-  } = props;
-  const checkTextInput = () => {
-    if (!textInputFrom.trim()) {
-      alert('Please Enter a City');
-      return;
-    }
-    navigation.navigate('To');
+  const [textInputFrom, setTextInputFrom] = useState('');
+  var sumary = {
+    capitalOrigin: '',
+    countryOrigin: '',
+    capitalDestiny: '',
+    countryDestiny: '',
+    date: {
+      day: 0,
+      month: 0,
+      year: 0,
+    },
+    passengers: 0,
   };
+ 
+ 
   return (
     <BookingLayout
       page={'my_flights'}
@@ -36,9 +38,7 @@ export const From = props => {
         />
       </View>
 
-      <TouchableOpacity style={Style.container_next} onPress={checkTextInput}>
-        <Text style={Style.text_next}>Next</Text>
-      </TouchableOpacity>
+     <NextButton value={textInputFrom} nextPage={'To'}/>
     </BookingLayout>
   );
 };

@@ -56,6 +56,7 @@ export const PassengerPicker = () => {
     setSelected(index);
   }
   const [ selected, setSelected ] = useState(1);
+  console.log(selected)
   return (
     <View style={styles.container}>
       <View style={styles.wrapperVertical}>
