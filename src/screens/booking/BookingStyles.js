@@ -28,6 +28,13 @@ const Styles = StyleSheet.create({
     borderBottomWidth: 0.5,
     paddingVertical: 8,
   },
+  flyregion_selectDateNoUnderline: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
   cityList: {
     color: 'black',
     fontWeight: '900',
@@ -47,7 +54,7 @@ const Styles = StyleSheet.create({
   },
   to_container: {},
   from_container: {
-    marginTop: windowHeight / 6,
+    marginTop: windowHeight * 0.01,
   },
   to: {
     marginTop: 60,

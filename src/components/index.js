@@ -6,3 +6,4 @@ export {Footer}          from './Footer/Footer';
 export {My_flightlist}   from './flightlist/My_flightlist';
 export {PassengerPicker} from './Passengers/Passengers'
 export {LayoutRegister} from './Layout/index'
+export {BookingLayout} from './Layout/BookingLayout'

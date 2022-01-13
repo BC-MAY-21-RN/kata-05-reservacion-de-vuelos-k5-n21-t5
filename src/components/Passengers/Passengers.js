@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import SmoothPicker from 'react-native-smooth-picker';
 import IonIcon from 'react-native-vector-icons/Ionicons';
+import styles from './PassengersStyle';
 
 const dataPassengers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-
 const opacities = {
   0: 1,
   1: 1,
@@ -29,7 +29,7 @@ const Item = React.memo(({opacity, selected, vertical, fontSize, name}) => {
       },
     ]}>
     {selected && <IonIcon name="chevron-forward-outline" style={styles.backIcon}/>}
-    <Text style={{fontSize}}>{name}</Text>
+    <Text style={[styles.text,{fontSize}]}>{name}</Text>
     {selected && <IonIcon name="chevron-back-outline" style={styles.backIcon}/>}
   </View>
   );
@@ -74,33 +74,3 @@ export const PassengerPicker = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: 20,
-    paddingBottom: 30,
-    alignItems: 'center',
-  },
-  wrapperVertical: {
-    width: 250,
-    height: 340,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 'auto',
-    color: 'black',
-    backgroundColor: 'red'
-  },
-  OptionWrapper: {
-    justifyContent: 'center',
-    flexDirection: 'row',
-    marginVertical: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-    height: 50,
-  },
-  backIcon: {
-    fontSize: 25,
-    color: '#5c6df8',
-    marginHorizontal: 30,
-  },
-});
