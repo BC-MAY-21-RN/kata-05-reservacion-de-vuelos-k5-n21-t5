@@ -14,7 +14,7 @@ import {
   GoogleSignin,
   GoogleSigninButton,
 } from '@react-native-google-signin/google-signin';
-import CheckBoxStyle from '../components/checkBox/CheckBoxStyle'
+import CheckBoxStyle from '../components/checkBox/CheckBoxStyle';
 
 GoogleSignin.configure({
   webClientId:
@@ -42,15 +42,15 @@ export const register = props => {
     auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        Alert.alert('Email ya esta en uso')
+        Alert.alert('Email ya esta en uso');
       })
       .catch(error => {
         if (error.code === 'auth/email-already-in-use') {
-          Alert.alert('El email ya esta en uso')
+          Alert.alert('El email ya esta en uso');
         }
 
         if (error.code === 'auth/invalid-email') {
-          Alert.alert('El email es invalido')
+          Alert.alert('El email es invalido');
         }
 
         console.error(error);
@@ -59,8 +59,9 @@ export const register = props => {
 
   const textPolicy = (
     <Text style={CheckBoxStyle.text}>
-      * I agree to the <Text style={CheckBoxStyle.textUnderLine}> Terms</Text> and
-      <Text style={CheckBoxStyle.textUnderLine}> Privacy Policy.</Text> 
+      * I agree to the <Text style={CheckBoxStyle.textUnderLine}> Terms</Text>{' '}
+      and
+      <Text style={CheckBoxStyle.textUnderLine}> Privacy Policy.</Text>
     </Text>
   );
   const textSubscribe = (
@@ -72,15 +73,25 @@ export const register = props => {
       <View style={Common_Styles.container_Form}>
         <Text style={Common_Styles.subtitle}>First Name</Text>
 
-        <FormInput autoCapitalize={'words'} placeholderAdj={'Jonh Smith'}  onChangeText={name => setName(name)} />
+        <FormInput
+          autoCapitalize={'words'}
+          placeholderAdj={'Jonh Smith'}
+          onChangeText={name => setName(name)}
+        />
 
         <Text style={Common_Styles.subtitle}>Email</Text>
 
-        <FormInput autoCapitalize={'none'} placeholderAdj={'user@example.com'} onChangeText={email => setEmail(email)} />
+        <FormInput
+          autoCapitalize={'none'}
+          placeholderAdj={'user@example.com'}
+          onChangeText={email => setEmail(email)}
+        />
 
         <Text style={Common_Styles.subtitle}>Password</Text>
 
-        <FormInput autoCapitalize={'none'} secureTextEntry={true}
+        <FormInput
+          autoCapitalize={'none'}
+          secureTextEntry={true}
           onChangeText={password => setPassword(password)}
         />
 
@@ -95,14 +106,14 @@ export const register = props => {
           setState={setAgreecheckBox}
           textComponent={textPolicy}
         />
-        </View>
-        <View style={CheckBoxStyle.checkContainer}>
+      </View>
+      <View style={CheckBoxStyle.checkContainer}>
         <CheckBox
           value={suscribecheckBox}
           setState={setSuscribecheckBox}
           textComponent={textSubscribe}
         />
-        </View>
+      </View>
 
       <FormButton buttonTitle="Sign Up" onPress={registerUser} />
 

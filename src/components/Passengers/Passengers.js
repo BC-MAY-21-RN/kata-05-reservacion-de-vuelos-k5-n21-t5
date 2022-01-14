@@ -52,10 +52,7 @@ const ItemToRender = ({item, index}, indexSelected, vertical) => {
 
 export const PassengerPicker = () => {
 
-  function handleChange(index) {
-    setSelected(index);
-  }
-  const [ selected, setSelected ] = useState(1);
+  const [ selected, setSelected ] = useState('');
   console.log(selected)
   return (
     <View style={styles.container}>
@@ -67,7 +64,7 @@ export const PassengerPicker = () => {
           showsVerticalScrollIndicator={false}
           data={dataPassengers}
           scrollAnimation
-          onSelected={({ item, index }) => handleChange(index)}
+          onSelected={({ item, index }) => setSelected(index)}
           renderItem={option => ItemToRender(option, selected, true)}
           magnet
         />

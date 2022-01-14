@@ -5,8 +5,7 @@ import Style from './BookingStyles';
 import {BookingLayout, NextButton} from '../../components/index';
 
 export const Select_date = () => {
-  const [date, setDate] = useState(0);
-  const fullDate = date.toString()
+  const [date, setDate] = useState('');
 
   return (
     <BookingLayout
@@ -20,7 +19,7 @@ export const Select_date = () => {
       </View>
       <CalendarPicker onDateChange={(value) => setDate (value)}/>
       
-      <NextButton nextPage={'Passenger'} value={fullDate} />
+      <NextButton nextPage={'Passenger'} value={date} />
     </BookingLayout>
   );
 };

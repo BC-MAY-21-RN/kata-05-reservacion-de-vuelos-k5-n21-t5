@@ -4,8 +4,6 @@ import Style from './BookingStyles';
 import {BookingLayout, NextButton} from '../../components/index';
 
 export const From = props => {
-  
-
   const [textInputFrom, setTextInputFrom] = useState('');
   var sumary = {
     capitalOrigin: '',
@@ -19,8 +17,7 @@ export const From = props => {
     },
     passengers: 0,
   };
- 
- 
+
   return (
     <BookingLayout
       page={'my_flights'}
@@ -38,7 +35,7 @@ export const From = props => {
         />
       </View>
 
-     <NextButton value={textInputFrom} nextPage={'To'}/>
+      <NextButton value={textInputFrom} nextPage={'To'} />
     </BookingLayout>
   );
 };
