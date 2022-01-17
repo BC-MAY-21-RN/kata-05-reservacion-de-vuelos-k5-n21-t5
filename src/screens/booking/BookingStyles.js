@@ -76,7 +76,6 @@ const Styles = StyleSheet.create({
   },
   text_next: {
     color: 'white',
-    backgroundColor: '#5c6df8',
     fontSize: 18,
     bottom: 0.9,
     textAlign: 'center',

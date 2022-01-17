@@ -4,14 +4,14 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import Style from '../../screens/booking/BookingStyles';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
+import {Store} from '../../Redux/Store';
 
 export const BookingLayout = ({
-  showOrigin,
-  showDestiny,
+  showAirplane,
   children,
-  showDate,
   page,
   underline,
+  passengers,
 }) => {
   const navigation = useNavigation();
 
@@ -23,27 +23,43 @@ export const BookingLayout = ({
         </View>
       </TouchableOpacity>
       <View>
-        <View style={underline ? Style.flyregion_selectDate : Style.flyregion_selectDateNoUnderline}>
+        <View
+          style={
+            underline
+              ? Style.flyregion_selectDate
+              : Style.flyregion_selectDateNoUnderline
+          }>
           <View>
-            <Text style={Style.cityList}>{showOrigin ? 'BEG' : ''}</Text>
-            <Text style={Style.countryList}>{showOrigin ? 'QWE' : ''}</Text>
+            <Text style={Style.cityList}>
+              {Store.getState().userReducer.origin}
+            </Text>
+            <Text style={Style.countryList}>
+              {Store.getState().userReducer.origin}
+            </Text>
           </View>
           <View>
             <IonIcon
-              name={showOrigin ? 'airplane' : ''}
+              name={showAirplane ? 'airplane' : null}
               size={30}
               color={'#5c6df8'}
             />
           </View>
           <View>
             <Text style={Style.cityListDestiny}>
-              {showDestiny ? 'AMS' : ''}
+              {Store.getState().userReducer.destiny}
             </Text>
-            <Text style={Style.countryList}>{showDestiny ? 'NET' : ''}</Text>
+            <Text style={Style.countryList}>
+              {Store.getState().userReducer.destiny}
+            </Text>
           </View>
         </View>
-        <View>
-          <Text style={Style.date}>{showDate ? '30 September 2021' : ''}</Text>
+        <View style={Style.flyregion_selectDateNoUnderline}>
+          <Text style={Style.date}>{Store.getState().userReducer.date}</Text>
+          <Text style={{color: 'black'}}>
+            {passengers
+              ? ` ${Store.getState().userReducer.passengers} passengers`
+              : ''}
+          </Text>
         </View>
       </View>
       {children}

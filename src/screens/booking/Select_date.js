@@ -1,32 +1,28 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {View, Text} from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
 import Style from './BookingStyles';
-import {BookingLayout} from '../../components/Layout/BookingLayout';
+import {BookingLayout, NextButton} from '../../components/index';
 
-export const Select_date = () => {
-  const navigation = useNavigation();
+export const Select_date = props => {
+  const minDate = new Date(); // Today
+  const [daate, setDaate] = useState('');
 
   return (
-    <BookingLayout
-      page={'To'}
-      showOrigin={true}
-      showDestiny={true}
-      showDate={false}
-      underline={true}>
+    <BookingLayout page={'To'} showAirplane={true} underline={true}>
       <View style={Style.to_container}>
         <Text style={Style.to}>Select Date</Text>
       </View>
-      <CalendarPicker />
+      <CalendarPicker
+        onDateChange={value => setDaate(value)}
+        minDate={minDate}
+      />
 
-      <TouchableOpacity
-        style={Style.container_next}
-        onPress={() => {
-          navigation.navigate('Passenger');
-        }}>
-        <Text style={Style.text_next}>Next</Text>
-      </TouchableOpacity>
+      <NextButton
+        nextPage={'Passenger'}
+        value={daate.toString().slice(0, 15)}
+        caso={'fecha'}
+      />
     </BookingLayout>
   );
 };

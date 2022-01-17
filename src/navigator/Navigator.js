@@ -8,6 +8,7 @@ import {
   From,
   Select_date,
   Passenger,
+  FinalDetails
 } from '../screens/index.js';
 
 const Stack = createNativeStackNavigator();
@@ -15,7 +16,7 @@ const Stack = createNativeStackNavigator();
 const Navigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Passenger"
+      initialRouteName="login"
       screenOptions={{
         headerShown: false,
       }}>
@@ -26,6 +27,7 @@ const Navigator = () => {
       <Stack.Screen name="From" component={From} />
       <Stack.Screen name="Select_date" component={Select_date} />
       <Stack.Screen name="Passenger" component={Passenger} />
+      <Stack.Screen name='FinalDetails' component={FinalDetails} />
     </Stack.Navigator>
   );
 };

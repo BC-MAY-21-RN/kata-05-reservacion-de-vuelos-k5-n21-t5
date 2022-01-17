@@ -26,7 +26,6 @@ export const FormInput = ({
           placeholderTextColor="black"
           autoCapitalize={autoCapitalize}
         />
-
         <TouchableOpacity>
           <IonIcon style={StylesForm.iconInput} name={iconName} size={30} />
         </TouchableOpacity>

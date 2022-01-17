@@ -1,31 +1,15 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput} from 'react-native';
 import Style from './BookingStyles';
-import IonIcon from 'react-native-vector-icons/Ionicons';
-import {useNavigation} from '@react-navigation/native';
-import {BookingLayout} from '../../components/Layout/BookingLayout';
+import {BookingLayout, NextButton} from '../../components/index';
+import {useSelector, useDispatch} from 'react-redux';
+import {Store} from '../../Redux/Store';
 
 export const From = props => {
-  const navigation = useNavigation();
   const [textInputFrom, setTextInputFrom] = useState('');
 
-  const {
-    route: {params: sumary},
-  } = props;
-  const checkTextInput = () => {
-    if (!textInputFrom.trim()) {
-      alert('Please Enter a City');
-      return;
-    }
-    navigation.navigate('To');
-  };
   return (
-    <BookingLayout
-      page={'my_flights'}
-      showOrigin={false}
-      showDestiny={false}
-      showDate={false}
-      underline={false}>
+    <BookingLayout page={'my_flights'} showAirplane={false} underline={false}>
       <View style={Style.from_container}>
         <Text style={Style.to}>Where are you now?</Text>
         <TextInput
@@ -36,9 +20,7 @@ export const From = props => {
         />
       </View>
 
-      <TouchableOpacity style={Style.container_next} onPress={checkTextInput}>
-        <Text style={Style.text_next}>Next</Text>
-      </TouchableOpacity>
+      <NextButton value={textInputFrom} nextPage={'To'} caso={'origen'} />
     </BookingLayout>
   );
 };
