@@ -1,30 +1,15 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput} from 'react-native';
 import Style from './BookingStyles';
 import {BookingLayout, NextButton} from '../../components/index';
+import {useSelector, useDispatch} from 'react-redux';
+import {Store} from '../../Redux/Store';
 
 export const From = props => {
   const [textInputFrom, setTextInputFrom] = useState('');
-  var sumary = {
-    capitalOrigin: '',
-    countryOrigin: '',
-    capitalDestiny: '',
-    countryDestiny: '',
-    date: {
-      day: 0,
-      month: 0,
-      year: 0,
-    },
-    passengers: 0,
-  };
 
   return (
-    <BookingLayout
-      page={'my_flights'}
-      showOrigin={false}
-      showDestiny={false}
-      showDate={false}
-      underline={false}>
+    <BookingLayout page={'my_flights'} showAirplane={false} underline={false}>
       <View style={Style.from_container}>
         <Text style={Style.to}>Where are you now?</Text>
         <TextInput
@@ -35,7 +20,7 @@ export const From = props => {
         />
       </View>
 
-      <NextButton value={textInputFrom} nextPage={'To'} />
+      <NextButton value={textInputFrom} nextPage={'To'} caso={'origen'} />
     </BookingLayout>
   );
 };

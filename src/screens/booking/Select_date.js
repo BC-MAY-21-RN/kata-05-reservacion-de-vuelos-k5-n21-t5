@@ -4,22 +4,25 @@ import CalendarPicker from 'react-native-calendar-picker';
 import Style from './BookingStyles';
 import {BookingLayout, NextButton} from '../../components/index';
 
-export const Select_date = () => {
-  const [date, setDate] = useState('');
+export const Select_date = props => {
+  const minDate = new Date(); // Today
+  const [daate, setDaate] = useState('');
 
   return (
-    <BookingLayout
-      page={'To'}
-      showOrigin={true}
-      showDestiny={true}
-      showDate={false}
-      underline={true}>
+    <BookingLayout page={'To'} showAirplane={true} underline={true}>
       <View style={Style.to_container}>
         <Text style={Style.to}>Select Date</Text>
       </View>
-      <CalendarPicker onDateChange={(value) => setDate (value)}/>
-      
-      <NextButton nextPage={'Passenger'} value={date} />
+      <CalendarPicker
+        onDateChange={value => setDaate(value)}
+        minDate={minDate}
+      />
+
+      <NextButton
+        nextPage={'Passenger'}
+        value={daate.toString().slice(0, 15)}
+        caso={'fecha'}
+      />
     </BookingLayout>
   );
 };
