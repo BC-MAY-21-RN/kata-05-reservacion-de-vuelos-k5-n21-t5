@@ -3,11 +3,8 @@ import {Text, TouchableOpacity} from 'react-native';
 import Style from '../../screens/booking/BookingStyles';
 import {useNavigation} from '@react-navigation/native';
 import {Store} from '../../Redux/Store';
-import {
-  setOrigin,
-  setDate,
-  setDestiny,
-} from '../../Redux/Actions';
+import {setOrigin, setDate, setDestiny} from '../../Redux/Actions';
+import {uploadData} from '../../FireBase/uploadData';
 
 export const NextButton = ({nextPage, value, caso}) => {
   function revisarPagina(page) {
@@ -18,6 +15,8 @@ export const NextButton = ({nextPage, value, caso}) => {
         return Store.dispatch(setDestiny(value));
       case 'fecha':
         return Store.dispatch(setDate(value));
+      case 'final':
+        return uploadData();
       default:
         break;
     }

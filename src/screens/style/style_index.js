@@ -28,7 +28,7 @@ const style_index = StyleSheet.create({
   container_circle: {
     position: 'absolute',
     alignSelf: 'center',
-    bottom: windowHeight / 9,
+    marginTop: windowHeight / 1.3,
   },
   add_circle: {
     color: '#5c6df8',

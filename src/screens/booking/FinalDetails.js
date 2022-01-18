@@ -14,7 +14,7 @@ export const FinalDetails = props => {
         <Text style={Style.to}>Your request was received.</Text>
       </View>
 
-      <NextButton nextPage={'my_flights'} caso={'1'} value={1} />
+      <NextButton nextPage={'my_flights'} caso={'final'} value={1} />
     </BookingLayout>
   );
 };
