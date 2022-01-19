@@ -1,22 +1,20 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import {ButtonStyles} from './FormButtonStyle';
+import {Store} from '../../Redux/Store'
 
 export const FormButton = ({
   buttonTitle,
   value,
-  name,
-  email,
-  password,
   ...rest
 }) => {
   const validacion =
-    (name,
-    email,
-    password != '' &&
+    (Store.getState().userData.name,
+    Store.getState().userData.email,
+   Store.getState().userData.password != '' &&
       value == true &&
-      email.includes('@gmail.com', '@hotmail.com', '@outlook.com') &&
-      password.length >= 8);
+      Store.getState().userData.email.includes('@gmail.com', '@hotmail.com', '@outlook.com') &&
+      Store.getState().userData.password.length >= 8);
 
   function checkFields() {
     if (validacion) {
