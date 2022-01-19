@@ -22,8 +22,6 @@ GoogleSignin.configure({
 });
 
 export const register = props => {
-  console.log(props);
-
   const navigation = useNavigation();
 
   const [name, setName] = useState('');
@@ -115,13 +113,23 @@ export const register = props => {
         />
       </View>
 
-      <FormButton buttonTitle="Sign Up" onPress={registerUser} />
+      <FormButton
+        buttonTitle="Sign Up"
+        onPress={registerUser}
+        value={agreecheckBox}
+        name={name}
+        email={email}
+        password={password}
+      />
 
       <Text style={style_index.or}>Or</Text>
 
       <GoogleSigninButton
         onPress={() =>
-          onGoogleButtonPress().then(() => navigation.replace('my_flights'))
+          onGoogleButtonPress().then(
+            () => Alert.alert('Inicio con google correctamente'),
+            navigation.replace('my_flights'),
+          )
         }
       />
     </LayoutRegister>

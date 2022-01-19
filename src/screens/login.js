@@ -39,6 +39,9 @@ export const login = props => {
         if (error.code === 'auth/user-not-found') {
           Alert.alert('El Email que ingresaste no está registrado');
         }
+        if (error.code === 'auth/user-not-found') {
+          Alert.alert('El Email que ingresaste no está registrado');
+        }
 
         console.error(error);
       });
@@ -62,7 +65,14 @@ export const login = props => {
         />
       </View>
 
-      <FormButton buttonTitle="Log In" onPress={loadUser} />
+      <FormButton
+        buttonTitle="Log In"
+        onPress={loadUser}
+        name={'name'}
+        email={email}
+        password={password}
+        value={true}
+      />
     </LayoutRegister>
   );
 };
