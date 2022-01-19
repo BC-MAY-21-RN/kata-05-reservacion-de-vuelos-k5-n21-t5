@@ -9,51 +9,20 @@ import {
 } from '../components/index';
 import Common_Styles from '../styles/CommonStyles';
 import style_index from './style/style_index';
-import auth from '@react-native-firebase/auth';
-import {
-  GoogleSignin,
-  GoogleSigninButton,
-} from '@react-native-google-signin/google-signin';
+import {GoogleSigninButton} from '@react-native-google-signin/google-signin';
 import CheckBoxStyle from '../components/checkBox/CheckBoxStyle';
-
-GoogleSignin.configure({
-  webClientId:
-    '343591224161-hgjsesh1nlnb105dtqju613v97agm2id.apps.googleusercontent.com',
-});
+import {Store} from '../Redux/Store';
+import {setName, setEmail, setPassword} from '../Redux/Actions';
+import {registerUser} from '../FireBase/registerUser';
+import {onGoogleButtonPress} from '../components/googleButton/signInWithGoogle';
 
 export const register = props => {
   const navigation = useNavigation();
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [agreecheckBox, setAgreecheckBox] = useState(false);
   const [suscribecheckBox, setSuscribecheckBox] = useState(false);
-
-  async function onGoogleButtonPress() {
-    const {idToken} = await GoogleSignin.signIn();
-    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-    return auth().signInWithCredential(googleCredential);
-  }
-
-  function registerUser() {
-    auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        Alert.alert('Email ya esta en uso');
-      })
-      .catch(error => {
-        if (error.code === 'auth/email-already-in-use') {
-          Alert.alert('El email ya esta en uso');
-        }
-
-        if (error.code === 'auth/invalid-email') {
-          Alert.alert('El email es invalido');
-        }
-
-        console.error(error);
-      });
-  }
+  const [name, setStateName] = useState('');
+  const [email, setStateEmail] = useState('');
+  const [password, setStatePassword] = useState('');
 
   const textPolicy = (
     <Text style={CheckBoxStyle.text}>
@@ -74,7 +43,10 @@ export const register = props => {
         <FormInput
           autoCapitalize={'words'}
           placeholderAdj={'Jonh Smith'}
-          onChangeText={name => setName(name)}
+          onChangeText={name => {
+            setStateName(name);
+            Store.dispatch(setName(name));
+          }}
         />
 
         <Text style={Common_Styles.subtitle}>Email</Text>
@@ -82,7 +54,10 @@ export const register = props => {
         <FormInput
           autoCapitalize={'none'}
           placeholderAdj={'user@example.com'}
-          onChangeText={email => setEmail(email)}
+          onChangeText={email => {
+            setStateEmail(email);
+            Store.dispatch(setEmail(email));
+          }}
         />
 
         <Text style={Common_Styles.subtitle}>Password</Text>
@@ -90,7 +65,10 @@ export const register = props => {
         <FormInput
           autoCapitalize={'none'}
           secureTextEntry={true}
-          onChangeText={password => setPassword(password)}
+          onChangeText={password => {
+            setStatePassword(password);
+            Store.dispatch(setPassword(password));
+          }}
         />
 
         <Text style={Common_Styles.passwordText}>
@@ -117,9 +95,6 @@ export const register = props => {
         buttonTitle="Sign Up"
         onPress={registerUser}
         value={agreecheckBox}
-        name={name}
-        email={email}
-        password={password}
       />
 
       <Text style={style_index.or}>Or</Text>
