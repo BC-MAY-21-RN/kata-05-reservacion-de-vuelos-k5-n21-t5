@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import {View, Text} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text } from 'react-native';
 import auth from '@react-native-firebase/auth';
 
- function Auth() {
+function Auth() {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
 
@@ -18,16 +18,24 @@ import auth from '@react-native-firebase/auth';
     return subscriber; // unsubscribe on unmount
   }, []);
 
-  if (initializing)   return null;
-  
+  if (initializing) return null;
+
   if (!user) {
     return (
-      <View> <Text style={{color: 'black'}}>Login</Text></View>
+      <View>
+        {' '}
+        <Text style={{ color: 'black' }}>Login</Text>
+      </View>
     );
   }
 
   return (
-    <View><Text style={{color: 'black'}}>Welcome {user.email}</Text></View>
+    <View>
+      <Text style={{ color: 'black' }}>
+        Welcome
+        {user.email}
+      </Text>
+    </View>
   );
 }
 

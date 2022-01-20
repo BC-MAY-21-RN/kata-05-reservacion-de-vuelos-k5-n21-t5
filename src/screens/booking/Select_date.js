@@ -1,28 +1,28 @@
-import React, {useState} from 'react';
-import {View, Text} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text } from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
 import Style from './BookingStyles';
-import {BookingLayout, NextButton} from '../../components/index';
+import { BookingLayout, NextButton } from '../../components/index';
 
-export const Select_date = props => {
+export function Select_date(props) {
   const minDate = new Date(); // Today
   const [daate, setDaate] = useState('');
 
   return (
-    <BookingLayout page={'To'} showAirplane={true} underline={true}>
+    <BookingLayout page="To" showAirplane underline>
       <View style={Style.to_container}>
         <Text style={Style.to}>Select Date</Text>
       </View>
       <CalendarPicker
-        onDateChange={value => setDaate(value)}
+        onDateChange={(value) => setDaate(value)}
         minDate={minDate}
       />
 
       <NextButton
-        nextPage={'Passenger'}
+        nextPage="Passenger"
         value={daate.toString().slice(0, 15)}
-        caso={'fecha'}
+        caso="fecha"
       />
     </BookingLayout>
   );
-};
+}

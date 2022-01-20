@@ -1,5 +1,4 @@
-import {StyleSheet} from 'react-native';
-import {windowHeight, windowWidth} from '../../helpers/size';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -8,7 +7,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    color: '#000'
+    color: '#000',
   },
   wrapperVertical: {
     width: 250,

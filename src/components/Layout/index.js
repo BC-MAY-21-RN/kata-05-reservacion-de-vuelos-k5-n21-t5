@@ -1,6 +1,6 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   Footer,
 } from '../index';
@@ -20,17 +20,19 @@ const singUpObject = {
   page: ' Log In',
   key: 'Footer-1',
 };
-export const LayoutRegister = ({isLoginScreen, navigation, children}) => (
-  <SafeAreaView style={Common_Styles.center_container}>
-    <View style={Common_Styles.Card_Container}>
-      <Text style={Common_Styles.title}>
-        {isLoginScreen ? 'Login' : 'Sign Up'}
-      </Text>
-      {children}
-      <Footer
-        {...(isLoginScreen ? loginObject : singUpObject)}
-        navigation={navigation}
-      />
-    </View>
-  </SafeAreaView>
-);
+export function LayoutRegister({ isLoginScreen, navigation, children }) {
+  return (
+    <SafeAreaView style={Common_Styles.center_container}>
+      <View style={Common_Styles.Card_Container}>
+        <Text style={Common_Styles.title}>
+          {isLoginScreen ? 'Login' : 'Sign Up'}
+        </Text>
+        {children}
+        <Footer
+          {...(isLoginScreen ? loginObject : singUpObject)}
+          navigation={navigation}
+        />
+      </View>
+    </SafeAreaView>
+  );
+}

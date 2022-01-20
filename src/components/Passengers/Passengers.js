@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-import {View, Text} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text } from 'react-native';
 import SmoothPicker from 'react-native-smooth-picker';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import styles from './PassengersStyle';
-import {Store} from '../../Redux/Store';
-import {setPassenger} from '../../Redux/Actions';
+import { Store } from '../../Redux/Store';
+import { setPassenger } from '../../Redux/Actions';
 
 const dataPassengers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 const opacities = {
@@ -20,29 +20,30 @@ const sizeText = {
   2: 15,
 };
 
-const Item = React.memo(({opacity, selected, vertical, fontSize, name}) => {
-  return (
-    <View
-      style={[
-        styles.OptionWrapper,
-        {
-          opacity,
-          borderColor: selected ? '#ABC9AF' : 'transparent',
-          width: vertical ? 250 : 'auto',
-        },
-      ]}>
-      {selected && (
-        <IonIcon name="chevron-forward-outline" style={styles.backIcon} />
-      )}
-      <Text style={[styles.text, {fontSize}]}>{name}</Text>
-      {selected && (
-        <IonIcon name="chevron-back-outline" style={styles.backIcon} />
-      )}
-    </View>
-  );
-});
+const Item = React.memo(({
+  opacity, selected, vertical, fontSize, name,
+}) => (
+  <View
+    style={[
+      styles.OptionWrapper,
+      {
+        opacity,
+        borderColor: selected ? '#ABC9AF' : 'transparent',
+        width: vertical ? 250 : 'auto',
+      },
+    ]}
+  >
+    {selected && (
+    <IonIcon name="chevron-forward-outline" style={styles.backIcon} />
+    )}
+    <Text style={[styles.text, { fontSize }]}>{name}</Text>
+    {selected && (
+    <IonIcon name="chevron-back-outline" style={styles.backIcon} />
+    )}
+  </View>
+));
 
-const ItemToRender = ({item, index}, indexSelected, vertical) => {
+function ItemToRender({ item, index }, indexSelected, vertical) {
   const selected = index === indexSelected;
   const gap = Math.abs(index - indexSelected);
 
@@ -63,9 +64,9 @@ const ItemToRender = ({item, index}, indexSelected, vertical) => {
       name={item}
     />
   );
-};
+}
 
-export const PassengerPicker = ({index}) => {
+export function PassengerPicker({ index }) {
   const [selected, setSelected] = useState('');
   return (
     <View style={styles.container}>
@@ -77,13 +78,13 @@ export const PassengerPicker = ({index}) => {
           showsVerticalScrollIndicator={false}
           data={dataPassengers}
           scrollAnimation
-          onSelected={({item, index}) => {
+          onSelected={({ item, index }) => {
             setSelected(index), Store.dispatch(setPassenger(index + 1));
           }}
-          renderItem={option => ItemToRender(option, selected, true)}
+          renderItem={(option) => ItemToRender(option, selected, true)}
           magnet
         />
       </View>
     </View>
   );
-};
+}
