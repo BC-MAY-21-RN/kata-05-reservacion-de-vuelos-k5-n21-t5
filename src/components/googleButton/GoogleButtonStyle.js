@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {windowHeight} from '../../helpers/size';
+import { StyleSheet } from 'react-native';
+import { windowHeight } from '../../helpers/size';
 
 export const GoogleStyles = StyleSheet.create({
   buttonContainer: {

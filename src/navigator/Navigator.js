@@ -1,5 +1,5 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
   login,
   register,
@@ -8,18 +8,19 @@ import {
   From,
   Select_date,
   Passenger,
-  FinalDetails
+  FinalDetails,
 } from '../screens/index.js';
 
 const Stack = createNativeStackNavigator();
 
-const Navigator = () => {
+function Navigator() {
   return (
     <Stack.Navigator
       initialRouteName="login"
       screenOptions={{
         headerShown: false,
-      }}>
+      }}
+    >
       <Stack.Screen name="login" component={login} />
       <Stack.Screen name="register" component={register} />
       <Stack.Screen name="my_flights" component={my_flights} />
@@ -27,9 +28,9 @@ const Navigator = () => {
       <Stack.Screen name="From" component={From} />
       <Stack.Screen name="Select_date" component={Select_date} />
       <Stack.Screen name="Passenger" component={Passenger} />
-      <Stack.Screen name='FinalDetails' component={FinalDetails} />
+      <Stack.Screen name="FinalDetails" component={FinalDetails} />
     </Stack.Navigator>
   );
-};
+}
 
 export default Navigator;

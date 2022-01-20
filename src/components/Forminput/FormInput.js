@@ -1,9 +1,9 @@
 import React from 'react';
-import {TextInput, TouchableOpacity, View} from 'react-native';
+import { TextInput, TouchableOpacity, View } from 'react-native';
 import IonIcon from 'react-native-vector-icons/Ionicons';
-import {StylesForm} from './inputStyle';
+import { StylesForm } from './inputStyle';
 
-export const FormInput = ({
+export function FormInput({
   labelVal,
   placeholderAdj,
   secureTextEntry,
@@ -12,11 +12,11 @@ export const FormInput = ({
   autoCapitalize,
   iconName,
   ...rest
-}) => {
+}) {
   return (
     <View style={StylesForm.Container}>
       <View style={StylesForm.inputContainer}>
-        <TextInput //mail
+        <TextInput // mail
           style={StylesForm.textInput}
           {...rest}
           value={labelVal}
@@ -32,4 +32,4 @@ export const FormInput = ({
       </View>
     </View>
   );
-};
+}

@@ -1,25 +1,25 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import Style from '../../screens/booking/BookingStyles';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import IonIcon from 'react-native-vector-icons/Ionicons';
-import {useNavigation} from '@react-navigation/native';
-import {Store} from '../../Redux/Store';
+import { useNavigation } from '@react-navigation/native';
+import Style from '../../screens/booking/BookingStyles';
+import { Store } from '../../Redux/Store';
 
-export const BookingLayout = ({
+const subscribe = Store.subscribe(() => { console.log('Cambio de estado'), console.log(Store.getState()); });
+export function BookingLayout({
   showAirplane,
   children,
   page,
   underline,
   passengers,
-}) => {
+}) {
   const navigation = useNavigation();
-
   return (
     <SafeAreaView style={Style.container}>
       <TouchableOpacity onPress={() => navigation.navigate(page)}>
         <View style={Style.back}>
-          <IonIcon name="chevron-back" size={38} color={'#5c6df8'} />
+          <IonIcon name="chevron-back" size={38} color="#5c6df8" />
         </View>
       </TouchableOpacity>
       <View>
@@ -28,7 +28,8 @@ export const BookingLayout = ({
             underline
               ? Style.flyregion_selectDate
               : Style.flyregion_selectDateNoUnderline
-          }>
+          }
+        >
           <View>
             <Text style={Style.cityList}>
               {Store.getState().userReducer.origin}
@@ -41,7 +42,7 @@ export const BookingLayout = ({
             <IonIcon
               name={showAirplane ? 'airplane' : null}
               size={30}
-              color={'#5c6df8'}
+              color="#5c6df8"
             />
           </View>
           <View>
@@ -55,7 +56,7 @@ export const BookingLayout = ({
         </View>
         <View style={Style.flyregion_selectDateNoUnderline}>
           <Text style={Style.date}>{Store.getState().userReducer.date}</Text>
-          <Text style={{color: 'black'}}>
+          <Text style={{ color: 'black' }}>
             {passengers
               ? ` ${Store.getState().userReducer.passengers} passengers`
               : ''}
@@ -65,4 +66,4 @@ export const BookingLayout = ({
       {children}
     </SafeAreaView>
   );
-};
+}

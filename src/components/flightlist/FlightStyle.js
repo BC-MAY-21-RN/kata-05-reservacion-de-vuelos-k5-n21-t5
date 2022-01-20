@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const FlightStyle = StyleSheet.create({
   container: {
@@ -62,6 +62,12 @@ const FlightStyle = StyleSheet.create({
   },
   flights_Container: {
     marginBottom: 50,
+  },
+  userText: {
+    color: 'black',
+    marginLeft: 10,
+    fontWeight: '700',
+    fontSize: 18,
   },
 });
 

@@ -1,5 +1,6 @@
-import {StyleSheet} from 'react-native';
-import {windowWidth, windowHeight} from '../../helpers/size';
+import { StyleSheet } from 'react-native';
+import { windowWidth, windowHeight } from '../../helpers/size';
+
 const Styles = StyleSheet.create({
   container: {
     marginHorizontal: 20,

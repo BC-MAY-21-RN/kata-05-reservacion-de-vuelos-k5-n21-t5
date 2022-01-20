@@ -1,8 +1,10 @@
 import React from 'react';
-import {Text, TouchableOpacity, Image, View} from 'react-native';
-import {GoogleStyles} from './GoogleButtonStyle';
+import {
+  Text, TouchableOpacity, Image, View,
+} from 'react-native';
+import { GoogleStyles } from './GoogleButtonStyle';
 
-export const GoogleButton = ({buttonTitle, ...result}) => {
+export function GoogleButton({ buttonTitle, ...result }) {
   return (
     <TouchableOpacity style={GoogleStyles.buttonContainer} {...result}>
       <View style={GoogleStyles.imageContainer}>
@@ -19,4 +21,4 @@ export const GoogleButton = ({buttonTitle, ...result}) => {
       </View>
     </TouchableOpacity>
   );
-};
+}
