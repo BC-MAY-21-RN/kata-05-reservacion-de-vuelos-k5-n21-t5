@@ -3,7 +3,7 @@ import { View, Text, TextInput } from 'react-native';
 import Style from './BookingStyles';
 import { BookingLayout, NextButton } from '../../components/index';
 
-export function To(props) {
+export function To() {
   const [textInputFrom, setTextInputFrom] = useState('');
 
   return (

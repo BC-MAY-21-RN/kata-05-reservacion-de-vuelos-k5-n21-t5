@@ -14,9 +14,16 @@ import CheckBoxStyle from '../components/checkBox/CheckBoxStyle';
 import { Store } from '../Redux/Store';
 import { setName, setEmail, setPassword } from '../Redux/Actions';
 import { registerUser } from '../FireBase/registerUser';
-import { onGoogleButtonPress, getCurrentUser } from '../components/googleButton/signInWithGoogle';
-import { validateEmail, validatePassword } from '../helpers/emailValidate';
-import { textPolicy, textSubscribe } from '../helpers/TextsRegister';
+import {
+  onGoogleButtonPress,
+  getCurrentUser,
+} from '../components/googleButton/signInWithGoogle';
+import {
+  validateEmail,
+  validatePassword,
+  textPolicy,
+  textSubscribe,
+} from '../helpers/indexHelper';
 
 export const register = (props) => {
   const [agreecheckBox, setAgreecheckBox] = useState(false);
@@ -107,9 +114,8 @@ export const register = (props) => {
 
       <GoogleSigninButton
         onPress={() => onGoogleButtonPress().then(
-          () => 
-          navigation.replace('my_flights'),
-          getCurrentUser()
+          () => navigation.replace('my_flights'),
+          getCurrentUser(),
         )}
       />
     </LayoutRegister>

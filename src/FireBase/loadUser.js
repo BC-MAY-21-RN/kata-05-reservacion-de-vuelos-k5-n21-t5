@@ -8,7 +8,7 @@ export function loadUser() {
       Store.getState().userData.password,
     )
     .then(() => {
-      alert( `Welcome ${Store.getState().userData.email}` );
+      alert(`Welcome ${Store.getState().userData.email}`);
     })
     .catch((error) => {
       if (error.code === 'auth/email-already-in-use') {
@@ -23,7 +23,6 @@ export function loadUser() {
       if (error.code === 'auth/wrong-password') {
         alert('The password is not correct');
       }
-
-      console.error(error);
+      console.log(error);
     });
 }

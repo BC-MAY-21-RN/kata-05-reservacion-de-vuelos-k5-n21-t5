@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { windowWidth, windowHeight } from '../../helpers/size';
+import { windowWidth, windowHeight } from '../../helpers/indexHelper';
 
 const Styles = StyleSheet.create({
   container: {

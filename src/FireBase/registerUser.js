@@ -18,7 +18,6 @@ export function registerUser() {
       if (error.code === 'auth/invalid-email') {
         alert('Email es invalid');
       }
-
-      console.error(error);
+      console.log(error);
     });
 }
