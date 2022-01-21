@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import Style from './BookingStyles';
 import { PassengerPicker, BookingLayout, NextButton } from '../../components/index';
+import { Tittle } from '../../components/BookingTittle.js/Tittle';
 
 export function Passenger(props) {
   return (
@@ -11,9 +12,7 @@ export function Passenger(props) {
       underline
       passengers={false}
     >
-      <View style={Style.to_container}>
-        <Text style={Style.to}>How many passengers?</Text>
-      </View>
+<Tittle TittleText={'How many passengers?'}/>
 
       <PassengerPicker />
       <NextButton nextPage="FinalDetails" caso="passengers" value={1} />

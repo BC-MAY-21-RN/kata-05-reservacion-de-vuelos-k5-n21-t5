@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
 import Style from './BookingStyles';
 import { BookingLayout, NextButton } from '../../components/index';
+import { Tittle } from '../../components/BookingTittle.js/Tittle';
 
 export function Select_date(props) {
   const minDate = new Date(); // Today
@@ -10,9 +11,7 @@ export function Select_date(props) {
 
   return (
     <BookingLayout page="To" showAirplane underline>
-      <View style={Style.to_container}>
-        <Text style={Style.to}>Select Date</Text>
-      </View>
+      <Tittle TittleText={'Select date'}/>
       <CalendarPicker
         onDateChange={(value) => setDaate(value)}
         minDate={minDate}

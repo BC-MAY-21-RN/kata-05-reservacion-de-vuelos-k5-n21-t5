@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text } from 'react-native';
+import { useState, useEffect } from 'react';
 import auth from '@react-native-firebase/auth';
 
 function Auth() {
@@ -19,24 +18,6 @@ function Auth() {
   }, []);
 
   if (initializing) return null;
-
-  if (!user) {
-    return (
-      <View>
-        {' '}
-        <Text style={{ color: 'black' }}>Login</Text>
-      </View>
-    );
-  }
-
-  return (
-    <View>
-      <Text style={{ color: 'black' }}>
-        Welcome
-        {user.email}
-      </Text>
-    </View>
-  );
 }
 
 export default Auth;

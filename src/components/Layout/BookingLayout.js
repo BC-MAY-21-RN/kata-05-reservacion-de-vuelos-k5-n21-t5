@@ -6,7 +6,6 @@ import { useNavigation } from '@react-navigation/native';
 import Style from '../../screens/booking/BookingStyles';
 import { Store } from '../../Redux/Store';
 
-const subscribe = Store.subscribe(() => { console.log('Cambio de estado'), console.log(Store.getState()); });
 export function BookingLayout({
   showAirplane,
   children,

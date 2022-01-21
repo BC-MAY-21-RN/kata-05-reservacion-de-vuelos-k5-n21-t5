@@ -1,8 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import Style from './BookingStyles';
 import { BookingLayout, NextButton } from '../../components/index';
-
+import { Tittle } from '../../components/BookingTittle.js/Tittle';
 export function FinalDetails(props) {
   return (
     <BookingLayout
@@ -11,10 +9,7 @@ export function FinalDetails(props) {
       underline
       passengers
     >
-      <View style={Style.from_container}>
-        <Text style={Style.to}>Your request was received.</Text>
-      </View>
-
+      <Tittle TittleText={'Your request was received.'}/>
       <NextButton caso="final" value={1} />
     </BookingLayout>
   );

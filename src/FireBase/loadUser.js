@@ -1,5 +1,4 @@
 import auth from '@react-native-firebase/auth';
-import { Alert } from 'react-native';
 import { Store } from '../Redux/Store';
 
 export function loadUser() {
@@ -9,22 +8,20 @@ export function loadUser() {
       Store.getState().userData.password,
     )
     .then(() => {
-      Alert.alert(`Bienvenido ${Store.getState().userData.email}`);
+      alert( `Welcome ${Store.getState().userData.email}` );
     })
     .catch((error) => {
       if (error.code === 'auth/email-already-in-use') {
-        Alert.alert(`${Store.getState().userData.email} ya está en uso`);
+        alert(`${Store.getState().userData.email} is already in use`);
       }
       if (error.code === 'auth/invalid-email') {
-        Alert.alert(
-          `${Store.getState().userData.email} Invalido, revisalo nuevamente`,
-        );
+        alert(`${Store.getState().userData.email} invalid, check it again`);
       }
       if (error.code === 'auth/user-not-found') {
-        Alert.alert(`${Store.getState().userData.email} no está registrado`);
+        alert(`${Store.getState().userData.email} is not registered`);
       }
       if (error.code === 'auth/wrong-password') {
-        Alert.alert('La contraseña que ingresaste no es correcta');
+        alert('The password is not correct');
       }
 
       console.error(error);
