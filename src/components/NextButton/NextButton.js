@@ -31,22 +31,23 @@ export function NextButton({ nextPage, value, caso }) {
         break;
       case 'final':
         alert(
-              'Confirm detail','Are you ready to fly?',
-              {
-                textCancel: 'Cancel', 
-                textConfirm: 'Confirm',
-                onConfirm: () => confirmClick(), 
-                onCancel: () => cancelClick()
-              }
+          'Confirm detail',
+          'Are you ready to fly?',
+          {
+            textCancel: 'Cancel',
+            textConfirm: 'Confirm',
+            onConfirm: () => confirmClick(),
+            onCancel: () => cancelClick(),
+          },
         );
 
         confirmClick = () => {
           uploadData();
           navigation.navigate('my_flights');
-        }
+        };
         cancelClick = () => {
           console.log('No pressed');
-        }
+        };
         break;
       default:
         break;

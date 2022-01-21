@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { windowHeight } from '../../helpers/size';
+import { windowHeight } from '../../helpers/indexHelper';
 
 export const StylesForm = StyleSheet.create({
   Container: {

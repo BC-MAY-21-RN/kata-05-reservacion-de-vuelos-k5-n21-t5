@@ -9,7 +9,7 @@ import {
   Select_date,
   Passenger,
   FinalDetails,
-} from '../screens/index.js';
+} from '../screens/index';
 
 const Stack = createNativeStackNavigator();
 

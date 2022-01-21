@@ -1,6 +1,6 @@
-import React from "react";
-import { Text } from "react-native";
-import CheckBoxStyle from '../components/checkBox/CheckBoxStyle'
+import React from 'react';
+import { Text } from 'react-native';
+import CheckBoxStyle from '../components/checkBox/CheckBoxStyle';
 
 export const textPolicy = (
   <Text style={CheckBoxStyle.text}>

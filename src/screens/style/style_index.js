@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {windowHeight} from '../../helpers/size.js';
+import {windowHeight} from '../../helpers/indexHelper';
 
 const style_index = StyleSheet.create({
   login: {
