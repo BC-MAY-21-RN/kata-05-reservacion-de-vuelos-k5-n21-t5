@@ -19,5 +19,6 @@ export async function onGoogleButtonPress() {
 export const getCurrentUser = async () => {
   const currentUser = await GoogleSignin.getCurrentUser();
   Store.dispatch(setName(currentUser.user.name));
+  alert('Welcome ' + currentUser.user.name),
   this.setState({ currentUser });
 };

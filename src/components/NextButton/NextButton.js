@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity, Alert } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Style from '../../screens/booking/BookingStyles';
 import { Store } from '../../Redux/Store';
@@ -30,21 +30,23 @@ export function NextButton({ nextPage, value, caso }) {
         }
         break;
       case 'final':
-        Alert.alert('Confirm Details', 'Are you ready to fly?', [
-          {
-            text: 'Yes',
-            onPress: () => {
-              uploadData();
-              navigation.navigate('my_flights');
-            },
-          },
-          {
-            text: 'No',
-            onPress: () => {
-              console.log('No pressed');
-            },
-          },
-        ]);
+        alert(
+              'Confirm detail','Are you ready to fly?',
+              {
+                textCancel: 'Cancel', 
+                textConfirm: 'Confirm',
+                onConfirm: () => confirmClick(), 
+                onCancel: () => cancelClick()
+              }
+        );
+
+        confirmClick = () => {
+          uploadData();
+          navigation.navigate('my_flights');
+        }
+        cancelClick = () => {
+          console.log('No pressed');
+        }
         break;
       default:
         break;

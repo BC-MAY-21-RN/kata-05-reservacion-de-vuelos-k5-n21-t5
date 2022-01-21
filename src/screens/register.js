@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, Alert } from 'react-native';
+import { Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import {
@@ -19,7 +19,6 @@ import { validateEmail, validatePassword } from '../helpers/emailValidate';
 import { textPolicy, textSubscribe } from '../helpers/TextsRegister';
 
 export const register = (props) => {
-  const navigation = useNavigation();
   const [agreecheckBox, setAgreecheckBox] = useState(false);
   const [suscribecheckBox, setSuscribecheckBox] = useState(false);
   const [name, setStateName] = useState('');
@@ -27,7 +26,7 @@ export const register = (props) => {
   const [password, setStatePassword] = useState('');
   const emailChecker = validateEmail(email);
   const passwordChecker = validatePassword(password);
-
+  const navigation = useNavigation();
   return (
     <LayoutRegister isLoginScreen={false} navigation={props.navigation}>
       <View style={Common_Styles.container_Form}>
@@ -108,9 +107,9 @@ export const register = (props) => {
 
       <GoogleSigninButton
         onPress={() => onGoogleButtonPress().then(
-          () => getCurrentUser(),
-          Alert.alert('Inicio con google correctamente'),
+          () => 
           navigation.replace('my_flights'),
+          getCurrentUser()
         )}
       />
     </LayoutRegister>

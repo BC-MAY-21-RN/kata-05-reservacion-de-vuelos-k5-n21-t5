@@ -51,8 +51,6 @@ export const login = props => {
         onPress={loadUser}
         name={'name'}
         value={true}
-        name={'name'}
-        value={true}
       />
     </LayoutRegister>
   );

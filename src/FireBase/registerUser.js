@@ -1,5 +1,4 @@
 import auth from '@react-native-firebase/auth';
-import { Alert } from 'react-native';
 import { Store } from '../Redux/Store';
 
 export function registerUser() {
@@ -9,15 +8,15 @@ export function registerUser() {
       Store.getState().userData.password,
     )
     .then(() => {
-      Alert.alert(`Bienvenido ${Store.getState().userData.name}`);
+      alert(`Welcome ${Store.getState().userData.name}`);
     })
     .catch((error) => {
       if (error.code === 'auth/email-already-in-use') {
-        Alert.alert('El email ya esta en uso');
+        alert('The email is used');
       }
 
       if (error.code === 'auth/invalid-email') {
-        Alert.alert('El email es invalido');
+        alert('Email es invalid');
       }
 
       console.error(error);
